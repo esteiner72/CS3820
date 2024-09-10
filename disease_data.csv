@@ -26,7 +26,6 @@ Hypertension,Yes,No,Yes,No,55,Male,High,Normal
 Hypertension,No,No,Yes,No,60,Female,High,Normal
 Hypertension,Yes,No,Yes,No,60,Male,High,Normal
 Hypertension,No,No,No,No,60,Female,High,High
-Hypertensive Heart Disease,No,No,Yes,No,30,Female,High,High
 Hypothyroidism,Yes,Yes,Yes,No,42,Female,High,High
 Hypothyroidism,Yes,Yes,Yes,No,42,Female,High,High
 Hypothyroidism,No,No,Yes,No,45,Female,High,High
@@ -54,7 +53,6 @@ Pneumonia,Yes,Yes,Yes,Yes,38,Male,Normal,Normal
 Pneumonia,Yes,Yes,Yes,Yes,40,Female,Normal,High
 Pneumonia,No,Yes,Yes,Yes,43,Female,High,Normal
 Pneumonia,Yes,Yes,Yes,Yes,45,Male,High,High
-Pneumothorax,No,No,Yes,Yes,50,Female,High,High
 Stroke,Yes,Yes,Yes,Yes,29,Female,Normal,Normal
 Stroke,No,Yes,Yes,Yes,50,Male,High,High
 Stroke,Yes,Yes,Yes,No,65,Female,High,High
