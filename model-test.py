@@ -9,7 +9,7 @@ import csv
 from sklearn.utils import Bunch
 
 def load_my_fancy_dataset():
-    with open(r'Disease_symptom_and_patient_profile_dataset.csv') as csv_file:
+    with open(r'Documents/GitHub/CS3820/trimmed_disease_data.csv') as csv_file:
         data_reader = csv.reader(csv_file)
         feature_names = next(data_reader)[:-1]
         data = []
@@ -18,13 +18,14 @@ def load_my_fancy_dataset():
             features = row[:-1]
             label = row[-1]
             data.append([float(num) for num in features])
-            target.append(int(label))
+            target.append(float(label))
         
         data = np.array(data)
         target = np.array(target)
     return Bunch(data=data, target=target, feature_names=feature_names)
 
-# Load the Iris dataset (150x4 numpy.ndarray matrix with sepal length, sepal width, flower length, flower width)
+load_my_fancy_dataset()
+
 iris = datasets.load_my_fancy_dataset()
 X = iris.data  # we only take the first two features.
 y = iris.target

@@ -7,7 +7,16 @@ mappings = {
     'Normal': 1,
     'Low': 0,
     'Female': 1,
-    'Male': 0
+    'Male': 0,
+    'Asthma': 0,
+    'Stroke': 1,
+    'Osteoprosis': 2,
+    'Diabetes': 3,
+    'Migraine': 4,
+    'Influenza': 5,
+    'Pneumonia': 6,
+    'Hypertension': 7,
+    'Hypothyroidism': 8,
 }
 
 df = pd.read_csv('Downloads/Disease_symptom_and_patient_profile_dataset.csv')
