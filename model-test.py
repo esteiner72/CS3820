@@ -17,16 +17,16 @@ def load_my_fancy_dataset():
         data = []
         target = []
         for row in data_reader:
-            features = row[:-1]
-            label = row[-1]
+            features = row[1:]
+            label = row[0]
             data.append([float(num) for num in features])
             target.append(int(label))
         
         data = np.array(data)
         target = np.array(target)
     return Bunch(data=data, target=target, feature_names=feature_names)
-
-test = [0, 0, 10, 0, 82, 2, 0]
+'''
+test = [1, 0, 0, 1, 20, 0, 2]
 data = load_my_fancy_dataset()
 ex_data = data.data[1]
 # to get rid of disease id num in disease data
@@ -35,16 +35,17 @@ print(test)
 print(ex_data)
 # calculating distance between vectors (lists)
 #cos_sim = np.dot(test, ex_data)/(norm(test)*norm(ex_data))
-cos_sim = 1-spatial.distance.cosine(test, ex_data)
-print((cos_sim))
+cos_sim = spatial.distance.cosine(test, ex_data)
+print((cos_sim))'''
 
-'''
-iris = datasets.load_my_fancy_dataset()
-X = iris.data  # we only take the first two features.
-y = iris.target
+dataset = load_my_fancy_dataset()
+X = dataset.data
+y = dataset.target
+print(X)
+print(y)
 
 # Split the data into a training set and a test set
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.14, random_state=42)
 
 # Standardize the features (mean=0, variance=1) using a vectorized operation
 scaler = StandardScaler()
@@ -59,4 +60,6 @@ clf.fit(X_train_scaled, y_train)
 y_pred = clf.predict(X_test_scaled)
 
 # Output the accuracy of the classifier
-print('Accuracy: {:.2f}'.format(accuracy_score(y_test, y_pred)))'''
+print('Accuracy: {:.2f}'.format(accuracy_score(y_test, y_pred)))
+print(y_pred)
+print(y_test)
