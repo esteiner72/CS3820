@@ -5,13 +5,14 @@ from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 import csv
 from sklearn.utils import Bunch
 from scipy import spatial
 
 def load_my_fancy_dataset():
-    with open(r'Documents/GitHub/CS3820/trimmed_disease_data.csv') as csv_file:
+    with open(r'C:\Users\Orange\JavaRepo\CS3820\trimmed_disease_data.csv') as csv_file:
         data_reader = csv.reader(csv_file)
         feature_names = next(data_reader)[:-1]
         data = []
@@ -53,7 +54,8 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 # Train a logistic regression classifier
-clf = LogisticRegression(random_state=42)
+#clf = LogisticRegression(random_state=42)
+clf = GaussianNB(var_smoothing=0.25)
 clf.fit(X_train_scaled, y_train)
 
 # Predict the test set results
