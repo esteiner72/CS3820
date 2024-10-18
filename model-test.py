@@ -12,7 +12,7 @@ from sklearn.utils import Bunch
 from scipy import spatial
 
 def load_my_fancy_dataset():
-    with open(r'C:\Users\Orange\JavaRepo\CS3820\trimmed_disease_data.csv') as csv_file:
+    with open(r'C:\Users\K4L3B\git\Projects C\projects\CS3820\Diseases_and_Symptoms_Final.csv') as csv_file:
         data_reader = csv.reader(csv_file)
         feature_names = next(data_reader)[:-1]
         data = []
@@ -26,6 +26,7 @@ def load_my_fancy_dataset():
         data = np.array(data)
         target = np.array(target)
     return Bunch(data=data, target=target, feature_names=feature_names)
+
 '''
 test = [1, 0, 0, 1, 20, 0, 2]
 data = load_my_fancy_dataset()
@@ -46,7 +47,7 @@ print(X)
 print(y)
 
 # Split the data into a training set and a test set
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.14, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
 
 # Standardize the features (mean=0, variance=1) using a vectorized operation
 scaler = StandardScaler()
