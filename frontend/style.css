@@ -1,19 +1,48 @@
+body {
+    background-color:lightblue;
+}
+
+.user-input {
+    background-color: rgb(206, 148, 148);
+    padding: 20px;
+    width: fit-content;
+    border-style: solid;
+    border-color: gray;
+    margin-left: 50px;
+    margin-top: 50px;
+    display:inline-table;
+}
+
+.results {
+    background-color: rgb(206, 148, 148);
+    padding: 20px;
+    width: fit-content;
+    border-style: solid;
+    border-color: gray;
+    margin-left: 50px;
+    margin-top: 50px;
+    display:inline-table;
+}
+
 .container {
-    display: block;
+    display: table;
     position: relative;
-    padding-left: 35px;
-    padding-bottom: 10px;
-    margin-bottom: 12px;
+    padding-left: 25px;
+    clear: both;
+    padding-bottom: 7px;
+    margin-bottom: 10px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 15px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     justify-content: center;
-    margin-left: 30px;
-    margin-top: 30px;
+    margin-left: 15px;
+    margin-top: 8px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
+    
 }
 
 .container input {
@@ -28,8 +57,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 15px;
+    width: 15px;
     background-color: #eee;
     border-radius: 50%;
 }
@@ -53,10 +82,10 @@
 }
   
 .container .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
+    top: 5px;
+    left: 5px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    background: white;
+    background: #2196F3;
 }
