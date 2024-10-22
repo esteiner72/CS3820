@@ -1,16 +1,20 @@
 body {
     background-color:lightblue;
+    display:inline-flex;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .user-input {
     background-color: rgb(206, 148, 148);
-    padding: 20px;
+    padding: 25px;
     width: fit-content;
     border-style: solid;
     border-color: gray;
     margin-left: 50px;
     margin-top: 50px;
     display:inline-table;
+    color:white;
 }
 
 .results {
@@ -21,7 +25,8 @@ body {
     border-color: gray;
     margin-left: 50px;
     margin-top: 50px;
-    display:inline-table;
+    display:inline-flexbox;
+    color: white;
 }
 
 .container {
@@ -45,47 +50,10 @@ body {
     
 }
 
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-  
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-  
-.container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-  
-.container input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
-  
-.checkmark:after {
-    content: "";
-    position: absolute;
+datalist {
     display: none;
 }
-  
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
-  
-.container .checkmark:after {
-    top: 5px;
-    left: 5px;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #2196F3;
+
+.s-list {
+    display:table;
 }
