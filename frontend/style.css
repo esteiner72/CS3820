@@ -1,8 +1,10 @@
 body {
     background-color:lightblue;
     display:inline-flex;
-    margin-left: 50px;
+    margin-left: 30px;
     margin-right: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 30px;
 }
 
 .user-input {
@@ -11,10 +13,11 @@ body {
     width: fit-content;
     border-style: solid;
     border-color: gray;
-    margin-left: 50px;
+    margin-left: 30px;
     margin-top: 50px;
     display:inline-table;
     color:white;
+    margin-right: 30px;
 }
 
 .results {
@@ -56,4 +59,14 @@ datalist {
 
 .s-list {
     display:table;
+}
+
+.submit {
+    border-width: 2px;
+    font-size: 20px;
+    background-color: gray;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 40px;
+    padding: 10px;
 }
