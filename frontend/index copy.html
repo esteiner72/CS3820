@@ -11,21 +11,17 @@
       <label for="symptom">Enter Symptoms: </label>
       <input list="symptoms" name="symptom" id="symptom">
       <datalist id="symptoms">
-        <option value="Symptom 1">
-        <option value="Symptom 2">
-          
       </datalist>
       <div class="submit">
-        Submit
+        <button id="resetButton">Reset</button>
+      </div>
+      <div class="submit">
+        <button class="submitButton">Submit</button>
       </div>
     </div>
     <div class="container">
       <div class="user-input">
-        <div class="s-list">
-        - Chills <br>
-        - Skin Irritation <br>
-        - Fever
-        </div>
+        <ul id="selectedSymptoms"></ul>
       </div>
     </div>
     <div class="results">
@@ -33,5 +29,6 @@
         *Results Area* 
       </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
