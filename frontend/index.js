@@ -61,8 +61,13 @@ function resetList() {
     selectedDataIds = [];
 }
 
+function submitList() {
+    
+}
+
 window.onload = () => {
     loadSymptoms();
     document.getElementById('symptom').addEventListener('keypress', handleInput);
     document.getElementById('resetButton').addEventListener('click', resetList);
+    document.getElementById('submitButton').addEventListener('click', submitList);
 };
