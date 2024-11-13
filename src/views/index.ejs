@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Select Symptoms</h1>
+
+    <!-- Autofill search input -->
+    <label for="symptom-input">Search Symptoms:</label>
+    <input type="text" id="symptom-input" autocomplete="off" placeholder="Start typing symptom..." />
+
+    <!-- List of matching symptoms will be shown here -->
+    <ul id="suggestions-list"></ul>
+
+    <h2>Selected Symptoms:</h2>
+    <ul id="selected-symptoms">
+        <!-- Selected symptoms will be listed here -->
+    </ul>
+
+    <button id="reset-button">Reset List</button>
+    <button id="submit-button">Submit</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const symptomMap = JSON.stringify(symptomMap);
+        console.log(symptomMap);
+        // Handle input and show suggestions
+        const inputElement = document.getElementById('symptom-input');
+        const suggestionsList = document.getElementById('suggestions-list');
+        const selectedSymptomsList = document.getElementById('selected-symptoms');
+
+        let selectedSymptoms = [];
+
+        inputElement.addEventListener('input', function () {
+            const query = inputElement.value.toLowerCase();
+            const suggestions = Object.keys(symptomMap).filter(symptom => symptom.toLowerCase().includes(query));
+
+            suggestionsList.innerHTML = '';
+            suggestions.forEach(symptom => {
+                const li = document.createElement('li');
+                li.textContent = symptom;
+                li.addEventListener('click', function () {
+                    addSymptom(symptom);
+                    inputElement.value = '';
+                    suggestionsList.innerHTML = '';
+                });
+                suggestionsList.appendChild(li);
+            });
+        });
+
+        function addSymptom(symptom) {
+            if (!selectedSymptoms.includes(symptom)) {
+                selectedSymptoms.push(symptom);
+                const li = document.createElement('li');
+                li.textContent = symptom;
+                selectedSymptomsList.appendChild(li);
+            }
+        }
+
+        document.getElementById('reset-button').addEventListener('click', function () {
+            selectedSymptoms = [];
+            selectedSymptomsList.innerHTML = '';
+        });
+
+        document.getElementById('submit-button').addEventListener('click', function () {
+            alert('Submitting selected symptoms: ' + selectedSymptoms.join(', '));
+            // Here, you can send the selected symptoms to the server via AJAX or a form submission if needed
+        });
+    </script>
+</body>
+</html>

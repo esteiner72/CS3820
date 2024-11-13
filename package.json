@@ -1,0 +1,17 @@
+{
+    "name": "blog",
+    "version": "1.0.0",
+    "description": "project frontend",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "build": "echo \"Add your build command here\""
+    },
+    "author": "Ethan Steiner",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.4.0",
+        "ejs": "^3.1.9",
+        "express": "^4.21.1"
+    }
+}
