@@ -38,7 +38,7 @@ function handleInput(event) {
         options.forEach(option => {
             if (option.value === inputValue) {
                 isValid = true;
-                selectedId = option.getAttribute('data-id');
+                selectedId = option.getAttribute('data-id') - 1;
             }
         });
 
@@ -62,7 +62,7 @@ function resetList() {
 }
 
 function submitList() {
-    
+
 }
 
 window.onload = () => {
