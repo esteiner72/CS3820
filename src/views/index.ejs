@@ -7,69 +7,123 @@
     <link type="text/css" href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Select Symptoms</h1>
-
-    <!-- Autofill search input -->
-    <label for="symptom-input">Search Symptoms:</label>
-    <input type="text" id="symptom-input" autocomplete="off" placeholder="Start typing symptom..." />
-
-    <!-- List of matching symptoms will be shown here -->
-    <ul id="suggestions-list"></ul>
-
-    <h2>Selected Symptoms:</h2>
-    <ul id="selected-symptoms">
-        <!-- Selected symptoms will be listed here -->
-    </ul>
-
-    <button id="reset-button">Reset List</button>
-    <button id="submit-button">Submit</button>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div class="user-input">
+      <label for="symptom">Enter Symptoms: </label>
+      <input list="symptoms" name="symptom" id="symptom">
+      <datalist id="symptoms">
+      </datalist>
+      <div class="submit">
+        <button id="resetButton">Reset</button>
+      </div>
+      <div class="submit">
+        <button id="submitButton">Submit</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="user-input">
+        <ul id="selectedSymptoms"></ul>
+      </div>
+    </div>
+    <div class="results">
+      <div class="test">
+        *Results Area* 
+      </div>
+    </div>
     <script>
-        const symptomMap = JSON.stringify(symptomMap);
-        console.log(symptomMap);
-        // Handle input and show suggestions
-        const inputElement = document.getElementById('symptom-input');
-        const suggestionsList = document.getElementById('suggestions-list');
-        const selectedSymptomsList = document.getElementById('selected-symptoms');
+        let selectedDataIds = [];
 
-        let selectedSymptoms = [];
+        async function loadSymptoms() {
+            try {
+                const response = await fetch('/data/Symptom_Map.csv');  // Fetch directly from the static path
+                if (!response.ok) {
+                    console.error('Failed to fetch CSV:', response.statusText);
+                    return;
+                }
 
-        inputElement.addEventListener('input', function () {
-            const query = inputElement.value.toLowerCase();
-            const suggestions = Object.keys(symptomMap).filter(symptom => symptom.toLowerCase().includes(query));
+                const csvText = await response.text();
+                const symptomMap = {};
 
-            suggestionsList.innerHTML = '';
-            suggestions.forEach(symptom => {
-                const li = document.createElement('li');
-                li.textContent = symptom;
-                li.addEventListener('click', function () {
-                    addSymptom(symptom);
-                    inputElement.value = '';
-                    suggestionsList.innerHTML = '';
+                const lines = csvText.trim().split('\n');
+                lines.forEach(line => {
+                    const [symptom, id] = line.split(',');
+                    symptomMap[symptom.trim()] = id.trim();
                 });
-                suggestionsList.appendChild(li);
-            });
-        });
 
-        function addSymptom(symptom) {
-            if (!selectedSymptoms.includes(symptom)) {
-                selectedSymptoms.push(symptom);
-                const li = document.createElement('li');
-                li.textContent = symptom;
-                selectedSymptomsList.appendChild(li);
+                const datalist = document.getElementById('symptoms');
+                for (const symptom in symptomMap) {
+                    const option = document.createElement('option');
+                    option.value = symptom;
+                    option.setAttribute('data-id', symptomMap[symptom]);
+                    datalist.appendChild(option);
+                }
+            } catch (error) {
+                console.error('Error loading symptoms:', error);
             }
         }
 
-        document.getElementById('reset-button').addEventListener('click', function () {
-            selectedSymptoms = [];
-            selectedSymptomsList.innerHTML = '';
-        });
+        function handleInput(event) {
+            const input = document.getElementById('symptom');
+            const selectedSymptomsList = document.getElementById('selectedSymptoms');
 
-        document.getElementById('submit-button').addEventListener('click', function () {
-            alert('Submitting selected symptoms: ' + selectedSymptoms.join(', '));
-            // Here, you can send the selected symptoms to the server via AJAX or a form submission if needed
-        });
+            if (event.key === 'Enter') {
+                const inputValue = input.value.trim();
+                const options = document.querySelectorAll('#symptoms option');
+
+                let isValid = false;
+                let selectedId = null;
+                options.forEach(option => {
+                    if (option.value === inputValue) {
+                        isValid = true;
+                        selectedId = option.getAttribute('data-id') - 1;
+                    }
+                });
+
+                if (isValid) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = inputValue;
+                    selectedSymptomsList.appendChild(listItem);
+                    selectedDataIds.push(selectedId);
+                    input.value = '';
+                    console.log(selectedDataIds);
+                } else {
+                    alert('Invalid symptom');
+                }
+            }
+        }
+
+        function resetList() {
+            const selectedSymptomsList = document.getElementById('selectedSymptoms');
+            selectedSymptomsList.innerHTML = '';
+            selectedDataIds = [];
+        }
+
+        async function submitList() {
+            try {
+                const response = await fetch('/submit-data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ selectedDataIds }),
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to save data');
+                }
+                
+                alert('Data saved successfully');
+            } catch (error) {
+                console.error('Error saving data:', error);
+                alert('Error saving data');
+            }
+        }
+
+        window.onload = () => {
+            loadSymptoms();
+            document.getElementById('symptom').addEventListener('keypress', handleInput);
+            document.getElementById('resetButton').addEventListener('click', resetList);
+            document.getElementById('submitButton').addEventListener('click', submitList);
+        };
     </script>
 </body>
 </html>
