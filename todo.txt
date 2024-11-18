@@ -7,6 +7,7 @@ presentation:
     - problem statement/L pipeline (what are we predicting)
     - lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
     - we have synthetic data
+        - explain can plug in and use data sets with real data + healthy data points
     - performance metrics (descriptions, results, and for which exact tests those were on)
     - include mean squared error, absolute error
     - include research and exploration improvements & what doesn't work, different performance metrics for each
