@@ -3,3 +3,16 @@ actual application to-do:
     - analyze size of classes & normalize if needed (important)
     - probabilities of top 3-5 (nice to have)
 
+presentation:
+    - problem statement/L pipeline (what are we predicting)
+    - lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
+    - we have synthetic data
+    - performance metrics (descriptions, results, and for which exact tests those were on)
+    - include mean squared error, absolute error
+    - include research and exploration improvements & what doesn't work, different performance metrics for each
+    - personal performance metrics (compare with something like online diagnostic tests for medical students maybe)
+    - cross-validation
+    - reference other works that use the data set as an accuracy comparison separate from test/train split
+    - expand readme instructions for user
+        - check out cookie cutter documentation pip thing
+    - 
