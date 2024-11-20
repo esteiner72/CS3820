@@ -7,6 +7,9 @@ actual application to-do:
 presentation:
     - problem statement/L pipeline (what are we predicting)
     - lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
+    - if we could expand scope
+        - adding ability for anyone to use (adding plain english for each symptom)
+        - symptom severity
     - we have synthetic data
         - explain can plug in and use data sets with real data + healthy (negative) data points
     - show format of dataset with examples
