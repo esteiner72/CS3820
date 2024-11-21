@@ -2,7 +2,6 @@ actual application to-do:
     X node frontend (important)
     - analyze size of classes & normalize if needed (important)
     - probabilities of top 3-5 (nice to have)
-    - test model cutting diseases < certain amount of instances
     - remove diseases < 20 because not enough to split train/test
 
 presentation:

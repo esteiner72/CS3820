@@ -19,9 +19,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/run-notebook', (req, res) => {
-    const jupyterPath = '/opt/homebrew/lib/python3.10/site-packages/jupyter';
-    const notebookPath = path.join(__dirname, 'model_test.ipynb');
-    const command = `${jupyterPath} nbconvert --to notebook --execute ${notebookPath} --output result.ipynb`;
+    const notebookPath = path.join(__dirname, 'test.ipynb');
+    const command = `nbconvert --to notebook --execute ${notebookPath} --output test.ipynb`;
   
     exec(command, (err, stdout, stderr) => {
       if (err) {

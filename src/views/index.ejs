@@ -27,6 +27,7 @@
     <div class="results">
       <div class="test">
         *Results Area* 
+        <div id="resultText"></div>
       </div>
     </div>
     <script>
@@ -34,7 +35,7 @@
 
         async function loadSymptoms() {
             try {
-                const response = await fetch('/data/Symptom_Map.csv');  // Fetch directly from the static path
+                const response = await fetch('/data/Symptom_Map.csv');
                 if (!response.ok) {
                     console.error('Failed to fetch CSV:', response.statusText);
                     return;
@@ -126,8 +127,8 @@
         })
         .then(response => {
             response.text()
-            const resultContainer = document.getElementsByClassName('test');
-            console.log(response.text());
+            const resultContainer = document.getElementById('resultText');
+            //console.log(response.text());
             resultContainer.innerHTML = response.text();
         })
         .then(csvData => {
