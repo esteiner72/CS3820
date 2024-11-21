@@ -3,10 +3,12 @@ actual application to-do:
     - analyze size of classes & normalize if needed (important)
     - probabilities of top 3-5 (nice to have)
     - test model cutting diseases < certain amount of instances
+    - remove diseases < 20 because not enough to split train/test
 
 presentation:
     - problem statement/L pipeline (what are we predicting)
     - lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
+        - class imbalance, but the imbalanced ones are extremely rare with specific symptoms (maybe give example)
     - if we could expand scope
         - adding ability for anyone to use (adding plain english for each symptom)
         - symptom severity
