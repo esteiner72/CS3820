@@ -26,7 +26,8 @@
     </div>
     <div class="results">
       <div class="test">
-        *Results Area* 
+        Prediction:
+        
         <div id="resultText"></div>
       </div>
     </div>
@@ -118,24 +119,15 @@
                 alert('Error saving data');
             }
         }
-        document.getElementById('submitButton').addEventListener('click', function() {
-        fetch('/run-notebook', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-        })
-        .then(response => {
-            response.text()
-            const resultContainer = document.getElementById('resultText');
-            //console.log(response.text());
-            resultContainer.innerHTML = response.text();
-        })
-        .then(csvData => {
-
-
-        })
-            .catch(error => console.error('Error:', error));
+        document.getElementById("submitButton").addEventListener("click", () => {
+            fetch("/run-classifier", { method: "POST" })
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("resultText").innerText = data; // Display result.csv content
+                })
+                .catch((error) => {
+                    document.getElementById("resultText").innerText = "Error: " + error.message;
+                });
         });
 
         window.onload = () => {
