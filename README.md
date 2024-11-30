@@ -9,3 +9,4 @@ Semester AI project by Ethan Steiner and Kaleb Stamey
 3. To start server:
     - (Windows) npx nodemon
     - (Mac/Linux) nodemon
+    - Frontend located at: http://localhost:3000
