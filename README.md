@@ -1,9 +1,11 @@
 # CS3820
-semester ai project
+Semester AI project by Ethan Steiner and Kaleb Stamey
 
-1. Install dependencies:
+1. insert instructions here
+
+2. Install dependencies:
     - npm ci
 
-2. To start server:
+3. To start server:
     - (Windows) npx nodemon
     - (Mac/Linux) nodemon

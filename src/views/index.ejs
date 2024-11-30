@@ -26,10 +26,18 @@
     </div>
     <div class="results">
       <div class="test">
-        Prediction:
-        
+        Top 3 Predictions (most likely to moderately likely):
         <div id="resultText"></div>
       </div>
+    </div>
+    <div class="table">
+            <div class="instructions">
+                1. Select symptom from auto-fill box
+                2. Press enter to put the selected symptom into the list
+                3. Repeat 1-2 until you are ready for the prediction
+                4. Press submit
+                5. Press reset or refresh the page if you've messed up or want a new prediction
+            </div>
     </div>
     <script>
         let selectedDataIds = [];
@@ -123,7 +131,7 @@
             fetch("/run-classifier", { method: "POST" })
                 .then((response) => response.text())
                 .then((data) => {
-                    document.getElementById("resultText").innerText = data; // Display result.csv content
+                    document.getElementById("resultText").innerText = data;
                 })
                 .catch((error) => {
                     document.getElementById("resultText").innerText = "Error: " + error.message;

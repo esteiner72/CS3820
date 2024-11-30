@@ -19,15 +19,13 @@ app.get('/', (req, res) => {
 });
 
 app.post("/run-classifier", (req, res) => {
-  // Run the Python script
   exec("python classifier.py", (error) => {
       if (error) {
           console.error(`Error: ${error.message}`);
-          res.status(500).send("Error running the classifier.");
+          res.status(500).send("No symptoms entered.");
           return;
       }
 
-      // Read the result.csv file after the script completes
       fs.readFile("data/result.csv", "utf8", (err, data) => {
           if (err) {
               console.error(`Error reading result.csv: ${err.message}`);
@@ -35,7 +33,6 @@ app.post("/run-classifier", (req, res) => {
               return;
           }
 
-          // Send the content of result.csv back to the client
           res.send(data);
       });
   });
