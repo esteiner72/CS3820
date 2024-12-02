@@ -61,6 +61,11 @@ datalist {
     display:table;
 }
 
+button {
+    color: white;
+    background-color: gray;
+}
+
 .submit {
     border-width: 2px;
     font-size: 20px;
@@ -69,4 +74,21 @@ datalist {
     height: fit-content;
     margin-top: 40px;
     padding: 10px;
+    
+}
+
+.instructions {
+    white-space: pre-line;
+    margin: 45px;
+    padding: 20px;
+    width: fit-content;
+    border-style: solid;    border-color: gray;
+    background-color: rgb(206, 148, 148);
+    text-align: center;
+    display: table;
+    color: white;
+}
+
+.resultText {
+    color: black;
 }

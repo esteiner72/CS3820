@@ -18,30 +18,25 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.post('/run-notebook', (req, res) => {
-    const notebookPath = path.join(__dirname, 'test.ipynb');
-    const command = `nbconvert --to notebook --execute ${notebookPath} --output test.ipynb`;
-  
-    exec(command, (err, stdout, stderr) => {
-      if (err) {
-        console.error('Error executing notebook:', stderr);
-        return res.status(500).send('Error executing notebook');
+app.post("/run-classifier", (req, res) => {
+  exec("python classifier.py", (error) => {
+      if (error) {
+          console.error(`Error: ${error.message}`);
+          res.status(500).send("No symptoms entered.");
+          return;
       }
-  
-      console.log('Notebook executed successfully:', stdout);
-  
-      const resultFilePath = path.join(__dirname, 'result.csv');
-  
-      if (fs.existsSync(resultFilePath)) {
-        // Read the CSV file and send its content as text
-        const csvContent = fs.readFileSync(resultFilePath, 'utf8');
-        res.type('text/csv').send(csvContent);
-      } else {
-        res.status(500).send('No result file generated');
-      }
-    });
-  });
 
+      fs.readFile("data/result.csv", "utf8", (err, data) => {
+          if (err) {
+              console.error(`Error reading result.csv: ${err.message}`);
+              res.status(500).send("Error reading the result.");
+              return;
+          }
+
+          res.send(data);
+      });
+  });
+});
 
 app.post('/submit-data', (req, res) => {
     const { selectedDataIds } = req.body;
