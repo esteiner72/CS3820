@@ -24,4 +24,4 @@ presentation:
     - reference other works that use the data set as an accuracy comparison separate from test/train split
     - expand readme instructions for user
         - check out cookie cutter documentation pip thing
-    - 
+    - biased toward unrealistic predictions when very few symptoms
