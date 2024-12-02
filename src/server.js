@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.post("/run-classifier", (req, res) => {
-  exec("python classifier.py", (error) => {
+  exec("python3 classifier.py", (error) => {
       if (error) {
           console.error(`Error: ${error.message}`);
           res.status(500).send("No symptoms entered.");
