@@ -5,6 +5,10 @@ actual application to-do:
     - remove diseases < 20 because not enough to split train/test
 
 presentation:
+    - related works
+        - research
+        - chat GPT
+            - issues/our USP: privacy, efficiency, speed, wording misunderstandings
     - valid for UCCS usage license on slides, mit license for repo
     - problem statement/L pipeline (what are we predicting)
     - lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
