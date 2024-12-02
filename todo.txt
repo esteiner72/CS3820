@@ -5,6 +5,7 @@ actual application to-do:
     - remove diseases < 20 because not enough to split train/test
 
 presentation:
+    - valid for UCCS usage license on slides, mit license for repo
     - problem statement/L pipeline (what are we predicting)
     - lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
         - class imbalance, but the imbalanced ones are extremely rare with specific symptoms (maybe give example)
