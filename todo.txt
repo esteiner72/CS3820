@@ -3,6 +3,7 @@ actual application to-do:
     - analyze size of classes & normalize if needed (important)
     - probabilities of top 3-5 (nice to have)
     - remove diseases < 20 because not enough to split train/test
+    - user and developer documentation
 
 presentation:
     - related works
@@ -26,6 +27,4 @@ presentation:
     - personal performance metrics (compare with something like online diagnostic tests for medical students maybe)
     - cross-validation
     - reference other works that use the data set as an accuracy comparison separate from test/train split
-    - expand readme instructions for user
-        - check out cookie cutter documentation pip thing
-    - biased toward unrealistic predictions when very few symptoms
+    - biased toward unrealistic predictions when very few symptoms are entered
