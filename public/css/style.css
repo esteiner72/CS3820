@@ -29,7 +29,8 @@ body {
     margin-left: 50px;
     margin-top: 50px;
     display:inline-flexbox;
-    color: white;
+    color: rgb(255, 255, 255);
+    font-size:20px;
 }
 
 .container {
@@ -89,6 +90,6 @@ button {
     color: white;
 }
 
-.resultText {
-    color: black;
+.test{
+    white-space: pre-line;
 }

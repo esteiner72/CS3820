@@ -63,8 +63,13 @@ with open("data/Disease_Map.csv", mode="r") as file:
 print(result)
 print(result2)
 print(result3)
-data = result, result2, result3
+data = "1.) {} \n".format(result)
+data2 = "2.) {} \n".format(result2)
+data3 = "3.) {} \n".format(result3)
 
 with open("data/result.csv", mode="w") as file:
     csv_write = csv.writer(file)
-    csv_write.writerows([data])
+    csv_write.writerows([[data]])
+    csv_write.writerows([[data2]])
+    csv_write.writerows([[data3]])
+
