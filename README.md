@@ -4,7 +4,7 @@ Semester AI Project "MEDIC" User Documentation by Ethan Steiner and Kaleb Stamey
 Summary:
 This project takes user input using a Node.js frontend and uses a machine learning logistic regression classifier
 to predict the top 3 most likely diseases based on the inputted symptoms. This is not medical advice, but a tool for
-medical professonals, nurses, or other users to aid in the process of narrowing down possible diseases based
+medical professionals, nurses, or other users to aid in the process of narrowing down possible diseases based
 on symptoms.
 
 Requirements:
