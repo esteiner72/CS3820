@@ -21,9 +21,13 @@ app.get('/', (req, res) => {
 app.post("/run-classifier", (req, res) => {
   exec("python3 classifier.py", (error) => {
       if (error) {
-          console.error(`Error: ${error.message}`);
-          res.status(500).send("No symptoms entered.");
-          return;
+        exec("python classifier.py"), (error) => {
+            if (error) {
+                console.error(`Error: ${error.message}`);
+            res.status(500).send("No symptoms entered.");
+            return;
+            }
+        }
       }
 
       fs.readFile("data/result.csv", "utf8", (err, data) => {

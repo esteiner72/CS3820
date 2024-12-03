@@ -1,3 +1,9 @@
+##
+## classifier.py contains the code which the front-end executes to use the clf.pkl to predict on user-input
+## Bypassing the front-end to test certain values can be performed by entering a custom 377 length list with your
+## custom data point 
+##
+
 from pickle import load
 import numpy as np
 from numpy.linalg import norm
