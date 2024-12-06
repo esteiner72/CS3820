@@ -7,11 +7,11 @@ actual application to-do:
 
 presentation:
     - related works
-        - research
-        - chat GPT
-            - issues/our USP: privacy, efficiency, speed, wording misunderstandings
-        - compare to other people's models on the same dataset
-            - compare performance matrics & accuracy
+        - research (KALEB)
+        X chat GPT
+            X issues/our USP: privacy, efficiency, speed, wording misunderstandings
+        - compare to other people's models on the same dataset (KALEB)
+            - compare performance matrics & accuracy (KALEB)
     X valid for UCCS usage license on slides, mit license for repo
     X problem statement/L pipeline (what are we predicting)
     X lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
@@ -25,8 +25,6 @@ presentation:
     - performance metrics (descriptions, results, and for which exact tests those were on)
         - include size of train vs test
     - include mean squared error, absolute error
-    - include research and exploration improvements & what doesn't work, different performance metrics for each
     - personal performance metrics (compare with something like online diagnostic tests for medical students maybe)
-    - reference other works that use the data set as an accuracy comparison separate from test/train split
     X biased toward unrealistic predictions when very few symptoms are entered
     - add probability explanations
