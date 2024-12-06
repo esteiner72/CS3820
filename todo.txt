@@ -1,0 +1,32 @@
+actual application to-do:
+    X node frontend (important)
+    X analyze size of classes & normalize if needed (important)
+    X probabilities of top 3-5 (nice to have)
+    X remove diseases < 20 because not enough to split train/test
+    X user and developer documentation
+
+presentation:
+    - related works
+        - research
+        - chat GPT
+            - issues/our USP: privacy, efficiency, speed, wording misunderstandings
+        - compare to other people's models on the same dataset
+            - compare performance matrics & accuracy
+    X valid for UCCS usage license on slides, mit license for repo
+    X problem statement/L pipeline (what are we predicting)
+    X lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
+        X class imbalance, but the imbalanced ones are extremely rare with specific symptoms (maybe give example)
+    - if we could expand scope
+        - adding ability for anyone to use (adding plain english for each symptom)
+        - symptom severity
+    X we have synthetic data
+        X explain can plug in and use data sets with real data + healthy (negative) data points
+    X show format of dataset with examples
+    - performance metrics (descriptions, results, and for which exact tests those were on)
+        - include size of train vs test
+    - include mean squared error, absolute error
+    - include research and exploration improvements & what doesn't work, different performance metrics for each
+    - personal performance metrics (compare with something like online diagnostic tests for medical students maybe)
+    - reference other works that use the data set as an accuracy comparison separate from test/train split
+    X biased toward unrealistic predictions when very few symptoms are entered
+    - add probability explanations
