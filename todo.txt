@@ -16,15 +16,12 @@ presentation:
     X problem statement/L pipeline (what are we predicting)
     X lots of stats about dataset, importance of each feature (possibly), # of classes, etc.
         X class imbalance, but the imbalanced ones are extremely rare with specific symptoms (maybe give example)
-    - if we could expand scope
-        - adding ability for anyone to use (adding plain english for each symptom)
-        - symptom severity
     X we have synthetic data
         X explain can plug in and use data sets with real data + healthy (negative) data points
     X show format of dataset with examples
-    - performance metrics (descriptions, results, and for which exact tests those were on)
-        - include size of train vs test
-    - include mean squared error, absolute error
+    X performance metrics (descriptions, results, and for which exact tests those were on)
+        X include size of train vs test
+    X include mean squared error, absolute error
+        X not applicable since classification, put in Top-K accuracy instead
     - personal performance metrics (compare with something like online diagnostic tests for medical students maybe)
     X biased toward unrealistic predictions when very few symptoms are entered
-    - add probability explanations
