@@ -80,3 +80,9 @@ with open("data/result.csv", mode="w") as file:
     csv_write.writerows([[data2]])
     csv_write.writerows([[data3]])
 
+with open("data/result.csv", mode="r", newline='', encoding='utf-8') as file:
+    lines = file.readlines()
+cleaned_lines = [line.replace('"', '').replace("'", '') for line in lines]
+
+with open("data/result.csv", mode="w", newline='', encoding='utf-8') as file:
+    file.writelines(cleaned_lines)
